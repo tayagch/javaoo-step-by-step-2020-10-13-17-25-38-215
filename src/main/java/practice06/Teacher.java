@@ -1,7 +1,5 @@
 package practice06;
 
-import java.util.Optional;
-
 public class Teacher extends Person{
 
     private int klass;

@@ -2,14 +2,15 @@ package practice09;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Klass {
     private int klass;
     private Student leader;
-    private List<Student> members = new ArrayList<>();
+    private List<Student> members;
+
     public Klass(int klass) {
         this.klass = klass;
+        this.members = new ArrayList<>();
     }
 
     public int getNumber() {
