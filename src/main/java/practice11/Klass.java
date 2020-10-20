@@ -33,7 +33,6 @@ public class Klass {
     public void assignLeader(Student leader) {
         if(members.contains(leader)){
             this.leader = leader;
-            // this will iterate the observers list and notify all the observers
             observers.forEach(observer -> observer.notifyAssignLeader(leader,this));
         }else
             System.out.print("It is not one of us.\n");
@@ -41,7 +40,6 @@ public class Klass {
 
     public void appendMember(Student member) {
         members.add(member);
-        // this will iterate the observers list and notify all the observers
         observers.forEach(observer -> observer.notifyNewStudent(member,this));
     }
 }
