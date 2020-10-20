@@ -21,4 +21,14 @@ public class Student extends Person{
         }
 
     }
+//
+//    @Override
+//    public void notifyNewStudent(Student student, Klass klass) {
+//
+//    }
+//
+//    @Override
+//    public void notifyAssignLeader(Student student, Klass klass) {
+//
+//    }
 }

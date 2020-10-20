@@ -8,7 +8,7 @@ public class Klass {
     private int klass;
     private Student leader;
     private List<Student> members = new ArrayList<>();
-    private List<Teacher> teachers = new ArrayList<>();
+    private List<Observer> observers = new ArrayList<>();
 
     public Klass(int klass) {
         this.klass = klass;
@@ -26,22 +26,22 @@ public class Klass {
         return leader;
     }
 
-    public void addTeacherListener(Teacher teacher){
-        teachers.add(teacher);
+    public void addObservers(Observer observer){
+        observers.add(observer);
     }
 
     public void assignLeader(Student leader) {
         if(members.contains(leader)){
             this.leader = leader;
-            teachers.forEach(listener -> listener.notifyAssignLeader(leader,this));
+            // this will iterate the observers list and notify all the observers
+            observers.forEach(observer -> observer.notifyAssignLeader(leader,this));
         }else
             System.out.print("It is not one of us.\n");
     }
 
     public void appendMember(Student member) {
         members.add(member);
-        teachers.forEach(listeners -> listeners.notifyJoin(member, this));
+        // this will iterate the observers list and notify all the observers
+        observers.forEach(observer -> observer.notifyNewStudent(member,this));
     }
-
-
 }

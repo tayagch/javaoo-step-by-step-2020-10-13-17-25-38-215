@@ -2,7 +2,7 @@ package practice11;
 
 import java.util.Objects;
 
-public class Person {
+public class Person implements Observer{
     private int id;
     private String name;
     private int age;
@@ -49,5 +49,15 @@ public class Person {
         return age == person.age &&
                 id == person.id &&
                 Objects.equals(name,person.name);
+    }
+
+    @Override
+    public void notifyNewStudent(Student student, Klass klass) {
+
+    }
+
+    @Override
+    public void notifyAssignLeader(Student student, Klass klass) {
+
     }
 }

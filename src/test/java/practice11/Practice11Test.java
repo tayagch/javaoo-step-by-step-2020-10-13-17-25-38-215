@@ -8,6 +8,7 @@ import java.io.PrintStream;
 import java.util.LinkedList;
 
 import static org.fest.assertions.api.Assertions.assertThat;
+import static org.junit.Assert.assertEquals;
 
 public class Practice11Test {
     private Klass klass2;
@@ -167,7 +168,7 @@ public class Practice11Test {
         LinkedList<Klass> linkedList = new LinkedList<Klass>();
         linkedList.add(klass2);
         Teacher tom = new Teacher(1, "Tom", 21, linkedList);
-        Student jerry = new Student(1, "Jerry", 8, new Klass(3));
+        Student jerry = new Student(1, "Jerry", 8, klass2);
 
         klass2.appendMember(jerry);
 
@@ -179,7 +180,7 @@ public class Practice11Test {
         LinkedList<Klass> linkedList = new LinkedList<Klass>();
         linkedList.add(klass2);
         Teacher tom = new Teacher(1, "Tom", 21, linkedList);
-        Student jerry = new Student(1, "Jerry", 8, new Klass(3));
+        Student jerry = new Student(1, "Jerry", 8, klass2);
 
         klass2.appendMember(jerry);
         klass2.assignLeader(jerry);
