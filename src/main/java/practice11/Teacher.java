@@ -29,16 +29,17 @@ public class Teacher extends Person implements Observer {
 
     @Override
     public String introduce() {
-        String classes = linkedList.stream().map(klass1 -> String.valueOf(klass1.getNumber())).collect(Collectors.joining(", "));
-        return !linkedList.isEmpty() ? String.format("%s I am a Teacher. I teach Class %s.", super.introduce(), classes) : String.format("%s I am a Teacher. I teach No Class.", super.introduce());
+        String classes = linkedList.stream().map(klass1 -> String.valueOf(klass1.getNumber()))
+                .collect(Collectors.joining(", "));
+        return !linkedList.isEmpty() ?
+                String.format("%s I am a Teacher. I teach Class %s.", super.introduce(), classes)
+                : String.format("%s I am a Teacher. I teach No Class.", super.introduce());
     }
 
     public String introduceWith(Student student) {
-        if (linkedList.contains(student.getKlass())) {
-            return super.introduce() + String.format(" I am a Teacher. I teach %s.", student.getName());
-        } else {
-            return super.introduce() + String.format(" I am a Teacher. I don't teach %s.", student.getName());
-        }
+        return linkedList.contains(student.getKlass()) ?
+                super.introduce() + String.format(" I am a Teacher. I teach %s.", student.getName())
+                : super.introduce() + String.format(" I am a Teacher. I don't teach %s.", student.getName());
     }
 
     public LinkedList<Klass> getClasses() {
