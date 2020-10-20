@@ -2,7 +2,7 @@ package practice11;
 
 public interface Observer {
 
-    void notifyNewStudent(Student student, Klass klass);
-    void notifyAssignLeader(Student student, Klass klass);
+    void notifyNewStudent(Student student);
+    void notifyAssignLeader(Student student);
 
 }

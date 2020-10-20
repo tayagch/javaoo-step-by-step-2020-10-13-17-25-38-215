@@ -51,14 +51,14 @@ public class Teacher extends Person implements Observer {
     }
 
     @Override
-    public void notifyNewStudent(Student student, Klass klass) {
+    public void notifyNewStudent(Student student) {
         System.out.print(String.format("I am %s. I know %s has joined %s.\n", this.getName(), student.getName(),
                 student.getKlass().getDisplayName()));
     }
 
     @Override
-    public void notifyAssignLeader(Student student, Klass klass) {
+    public void notifyAssignLeader(Student student) {
         System.out.print(String.format("I am %s. I know %s become Leader of %s.\n", this.getName(), student.getName(),
-                klass.getDisplayName()));
+                student.getKlass().getDisplayName()));
     }
 }
