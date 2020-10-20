@@ -30,7 +30,7 @@ public class Teacher extends Person implements Observer {
     @Override
     public String introduce() {
         String classes = linkedList.stream().map(klass1 -> String.valueOf(klass1.getNumber())).collect(Collectors.joining(", "));
-        return !linkedList.isEmpty() ? super.introduce() + " " + "I am a Teacher. I teach Class " + classes + "." : super.introduce() + " " + "I am a Teacher. I teach No Class.";
+        return !linkedList.isEmpty() ? String.format("%s I am a Teacher. I teach Class %s.", super.introduce(), classes) : String.format("%s I am a Teacher. I teach No Class.", super.introduce());
     }
 
     public String introduceWith(Student student) {
